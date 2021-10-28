@@ -1,0 +1,86 @@
+*{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Glory', sans-serif;
+    background: #00082c;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.padre{
+    display: flex;
+    flex-flow: column nowrap;
+}
+    .header{
+        background: url(img/bg.jpeg);
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+        .menu{
+            background: rgba(0,0,0,.1);
+            display: inline-flex;
+            flex-flow: row nowrap;
+            height: 60px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,.5);
+        }
+            ul{
+                color: #fff;
+                display: flex;
+                text-decoration: none;
+                align-content: space-around;
+            }
+                li{
+                  flex: 5 1 auto; 
+                }
+                    li a{
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        padding: 0 10px;
+                        letter-spacing: 2px;
+                    }
+                    li a:hover{
+                        color: #00ffff;
+                    }
+.section{
+    background: rgb(91, 204, 241);
+    display: flex;
+    flex-flow: row wrap;
+    flex: 2 1 auto;
+}
+    .section img{
+        width: 50%;
+        align-content: center;
+    }
+    .participante{
+        background: rgb(47, 191, 240);
+        flex: 1 1 45%;
+        color: black;
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin: 10px 10px 0 0px;
+        width: 200px;
+
+    }
+    .participante img{
+        width: 50%;
+        flex: auto; 
+    }
+        h2{
+            display: flex;
+            color: #fff;
+        }
+        h3{
+            display: block;
+            color: #fff;
+        }
+        h3 a:hover{
+            color: #023535;
+        }
