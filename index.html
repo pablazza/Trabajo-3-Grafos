@@ -7,13 +7,17 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/vis-network.min.css">
+        <link rel="stylesheet" href="css/vis.min.css">
         <script src="https://kit.fontawesome.com/1af4391563.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <div class="padre">
             <header class="header">
+                <h1 class="Enunciado">Grafos y Lenguajes Formales</h1>
                 <div class="menu">
                      <ul>
                          <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
@@ -21,9 +25,32 @@
                      </ul>
                 </div>
             </header>
-            <section class="section">
-                
+            <section class="automata">
+                <h2 class="cont-automata">Trabajo Unidad III: Automatas de Pila</h2>
             </section>
+            <main class="contenedor sombra">
+
+                <h2 class="title-auto">Automatas de Pila</h2>
+                <div>
+                    <h3 class="instruccion">Instrucciones: </h3>
+                    <p>1) Para crear un automata, haga click en el boton "Crear Automata(s)", podra crear un AFD o dos AP</p>
+                    <p>2) Para eliminar los automatas, haga click en el boton "Borrar Automata(s)"</p>
+                </div>
+
+                <section>
+                    <div class="boton-automata">
+                        <input type="button" class="boton" value="Crear Automata(s)" onclick=""/>
+                        <input type="button" class="boton" value="Borrar Automata(s)" onclick=""/>
+                    </div>
+                    <div class="boton-funciones">
+                        <input type="button" class="boton" value="Obtener ER" onclick=""/>
+                        <input type="button" class="boton" value="Unir AP" onclick=""/>
+                        <input type="button" class="boton" value="Concatenar AP" onclick=""/>
+                    </div>
+                    <div id="mynetwork"></div>
+                </section>
+
+            </main>
             <footer class="footer">
                 <div class="pie">
                     

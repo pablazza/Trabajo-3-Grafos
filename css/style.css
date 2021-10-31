@@ -1,11 +1,30 @@
-*{
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #757575;
+    --secundario: #2a3b86;
+    --fondo: #0a1858;
+}
+#mynetwork {
+    width: 100%;
+    height: 50rem;
+    border: .5rem solid var(--oscuro);
+    margin: 1rem 1rem;
+    padding: 2rem 2rem;
+  }
+*,*:before,*:after{
     margin: 10px;
     padding: 10px;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
     box-sizing: border-box;
 }
 body{
-    font-family: 'Glory', sans-serif;
-    background: #00082c;
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--fondo) 0%, var(--blanco) 100%);
 }
 a{
     text-decoration: none;
@@ -16,13 +35,14 @@ a{
     flex-flow: column nowrap;
 }
     .header{
-        background: url(img/bg.jpeg);
-        background-position: center;
-        background-attachment: contain;
-        background-size: cover;
+        background-image: url(../img/bg.jpeg);
         display: flex;
         flex-flow: column nowrap;
     }
+        .Enunciado{
+            color:#ffffff;
+            text-align: center;
+        }
         .menu{
             background: rgba(0,0,0,.1);
             display: inline-flex;
@@ -49,6 +69,7 @@ a{
                     li a:hover{
                         color: #00ffff;
                     }
+
 .section{
     background: rgb(91, 204, 241);
     display: flex;
@@ -84,3 +105,57 @@ a{
         h3 a:hover{
             color: #023535;
         }
+
+.automata{
+    color:#000;
+    background-image: url(../img/codigo.jpg);
+    display:inline-block;
+    align-content: center;
+}
+    .automata img{
+        max-width: inherit;
+    }
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+h2.title-auto{
+    color:black;
+}
+h3.instruccion{
+    color:black;
+}
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;
+    border:none;
+  }
+  .boton:hover{
+    cursor: pointer;
+  }
+  .boton-automata{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 2rem;
+    column-gap: 1rem;
+  }
+  .boton-funciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: auto auto 2rem;
+    column-gap: 1rem;
+  }
