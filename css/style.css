@@ -12,7 +12,7 @@
     margin: 1rem 1rem;
     padding: 2rem 2rem;
   }
-*,*:before,*:after{
+*, *:before,* :after {
     margin: 10px;
     padding: 10px;
     box-sizing: inherit;
@@ -49,7 +49,6 @@ a{
             flex-flow: row nowrap;
             height: 60px;
             align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,.5);
         }
             ul{
                 color: #fff;
@@ -70,13 +69,13 @@ a{
                         color: #00ffff;
                     }
 
-.section{
+.seccion{
     background: rgb(91, 204, 241);
     display: flex;
     flex-flow: row wrap;
     flex: 2 1 auto;
 }
-    .section img{
+    .seccion img{
         width: 50%;
         align-content: center;
     }
@@ -94,27 +93,31 @@ a{
         width: 50%;
         flex: auto; 
     }
-        h2{
+        h2.participante{
             display: flex;
             color: #fff;
         }
-        h3{
+        h3.participante{
             display: block;
             color: #fff;
         }
-        h3 a:hover{
+        h3.participante a:hover{
             color: #023535;
         }
 
 .automata{
     color:#000;
-    background-image: url(../img/codigo.jpg);
-    display:inline-block;
-    align-content: center;
+    background-image: url(../img/bg.jpeg);
+    
 }
     .automata img{
-        max-width: inherit;
+        display: flex;
     }
+h2.cont-automata{
+    text-align: center;
+    color:#fff;
+    font-display: flex;
+}
 
 .contenedor{
     max-width: 120rem;
@@ -132,6 +135,7 @@ h2.title-auto{
 h3.instruccion{
     color:black;
 }
+
 .boton {
     background-color: var(--secundario);
     color: var(--blanco);

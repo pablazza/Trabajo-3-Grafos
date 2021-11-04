@@ -1,3 +1,27 @@
+// Create a storage object
+var storage = new plog.storages.LocalStorage({maxSize: 200})
+//https://blog.koalite.com/2014/01/logs-para-aplicaciones-javascript-con-persistent-log/
+// Initialize storage and level (DEBUG, INFO, WARN, ERROR or FATAL)
+plog.useStorage(storage);
+plog.setLevel(plog.level.INFO);
+
+/* Write messages to log
+plog.debug('debug message');
+plog.info('info message');
+plog.warn('warn message');
+plog.error('error message');
+plog.fatal('fatal message');
+
+// Retrieve stored events
+var events = storage.getEvents();
+
+
+/*{
+	level: 0, // 0 - DEBUG, ..., 3 - FATAL
+	message: 'some message',
+	date: '2013-12-31T12:04:32.283Z'
+}*/
+
 var nodes, edges,ID = 4;
 var nautomatas = 1;
 var estados,alfabeto,transicion,inicial,finales,unido = false,concatenados = false, esAFND = false;
@@ -39,7 +63,7 @@ var data = {
 qinicial1 = estadoinicial(1).id;
 
 function crear() {
-    plog.info("Se muestran las alternativas para crear los automatas AFD o AFND");
+    plog.info("Se muestran las alternativas para crear un automata AFD o dos automatas AP");
     Swal.fire({
       icon: 'question',
       iconColor: '#7de1de',
@@ -49,24 +73,24 @@ function crear() {
       showCancelButton: false,
       showDenyButton: true,
       showCloseButton: true,
-      confirmButtonText: '<i class="AFD"></i> AFD',
+      confirmButtonText: '<i class="AFD">1 AFD</i>',
       confirmButtonColor: '#7de1de',
       denyButtonColor: '#ff9d00',
-      denyButtonText: '<i class="ANFD"></i> AFND'
+      denyButtonText: '<i class="AP">2 AP</i>'
     
     }).then(result => {
       if (result.isConfirmed) {
-        plog.info("Opcion seleccionada crear AFD");
+        plog.info("Opcion seleccionada crear 1 AFD");
         AFD();
       } else if (result.isDenied) {
-        plog.info("Opcion Seleccionada crear AFND");
-        AFND();
+        plog.info("Opcion Seleccionada crear 2 AP");
+        AP();
       }
     });
   }
 
   async function AFD() {
-    if (nautomatas == 2) {
+    if (nautomatas == 1) {
       const Toast = Swal.mixin({
         toast: true,
         position: "top",
@@ -77,8 +101,8 @@ function crear() {
       Toast.fire({
         icon: "warning",
         iconColor: '#ed1c24',
-        title: "El maximo de automatas es 2",
-        text: "Limpia pantalla si deseas ingresar nuevos automatas "
+        title: "Solo es 1 AFD",
+        text: "Limpia pantalla si deseas ingresar otro automata "
       });
       return;
     }
@@ -412,3 +436,5 @@ function estadoinicial(automata) {
       return automata2;
     }
   }
+  var network = new vis.Network(container, data, xoptions);
+  network.setOptions(xoptions);
