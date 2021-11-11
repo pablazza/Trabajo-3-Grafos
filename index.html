@@ -1,61 +1,78 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Trabajo Nº3 Grafos</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="preload" href="css/style.css" as="style">
-        <link rel="stylesheet" href="css/vis.min.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <script src="javascript/vis-network.js"></script>
-        <script src="javascript/plog.js"></script>
-        <script src="javascript/sweetalert2.all.min.js"></script>
-        <script src="javascript/codigo.js" defer></script>
-        <script src="https://kit.fontawesome.com/1af4391563.js" crossorigin="anonymous"></script>
-    </head>
+<html lang="en">
 
-    <body>
-        <div class="padre">
-            <header class="header">
-                <h1 class="Enunciado">Grafos y Lenguajes Formales</h1>
-                <div class="menu">
-                     <ul>
-                         <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
-                         <li><a href="Nosotros.html"><i class="fas fa-address-book"></i>Nosotros</a></li> 
-                     </ul>
-                </div>
-            </header>
-        </div>
-        <section class="automata">
-            <h2 class="cont-automata">Trabajo Unidad III: Automatas de Pila</h2>
-        </section>
-        <main class="contenedor sombra">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Estilos CSS y fuentes -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="icon" href="">
 
-            <h2 class="title-auto">Automatas de Pila</h2>
-            <div>
-                <h3 class="instruccion">Instrucciones: </h3>
-                <p>1) Para crear un automata, haga click en el boton "Crear Automata(s)", podra crear un AFD o dos AP</p>
-                <p>2) Para eliminar los automatas, haga click en el boton "Borrar Automata(s)"</p>
+    <title>Trabajo 3 Inicio</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top p-3 aria-label">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: rgb(8, 226, 242);">Grafos y Lenguajes Formales</a>
+            <button class="navbar-toggler border-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expand="false" aria-label="Toggle navigation">
+                <ion-icon= name="menu-outline"></ion-icon>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html" style="text-align: center;">Inicio </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="nosotros.html" style="text-align: center;">Nosotros </a>
+                    </li>
+                    <a href="automatas.html" class="btn btn-outline-light px-2" style="text-align: center; max-width: 850px;">Ingresa un aut&oacutemata</a>
+                    <a href="automatasAP.html" class="btn btn-outline-light px-2 ml-1" style="text-align: center; max-width: 850px;">Ingresa dos aut&oacutematas AP</a>
+                
+                </ul>    
             </div>
+        </div>
+    </nav>
 
-            <section>
-                <div class="boton-automata">
-                    <input type="button" class="boton" value="Crear Automata(s)" onclick="crear()"/>
-                    <input type="button" class="boton" value="Borrar Automata(s)" onclick="borrar()"/>
-                </div>
-                <div class="boton-funciones">
-                    <input type="button" class="boton" value="Obtener ER" onclick=""/>
-                    <input type="button" class="boton" value="Unir AP" onclick=""/>
-                    <input type="button" class="boton" value="Concatenar AP" onclick=""/>
-                </div>
-                <div id="mynetwork"></div>
-            </section>
+    <section id="inicio">
+        <div class="container">
+            <div class="text pt-5 pb-1">
+                <h1>
+                    <span class="">U</span>
+                    <span class="">n</span>
+                    <span class="">i</span>
+                    <span class="">d</span>
+                    <span class="">a</span>
+                    <span class="">d</span>
+                    <span class="ml-3">3</span>
+                    <span class="ml-3">A</span>
+                    <span class="">u</span>
+                    <span class="">t</span>
+                    <span class="">o</span>
+                    <span class="">m</span>
+                    <span class="">a</span>
+                    <span class="">t</span>
+                    <span class="">a</span>
+                    <span class="ml-3">D</span>
+                    <span class="">e</span>
+                    <span class="ml-3">P</span>
+                    <span class="">i</span>
+                    <span class="">l</span>
+                    <span class="">a</span>
+                </h1>
+            </div>
+        </div>
+    </section>
 
-        </main>
-    </body>
+</body>
 
 </html>
