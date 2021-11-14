@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTFd-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/automatas.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    
+    <link rel="icon" href="img/grafo.png">
+    <title>Aut&oacutematas</title>
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top p-3 aria-label">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: rgb(8, 226, 242);">Grafos y Lenguajes Formales</a>
+            <button class="navbar-toggler border-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html" style="text-align: center;">Inicio </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="nosotros.html" style="text-align: center;">Nosotros </a>
+                    </li>
+                    <a href="automatas.html" class="btn btn-outline-light px-2" style="text-align: center; max-width: 850px;">Ingresa un aut&oacutemata</a>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="border border-dark shadow rounded my-5 pb-5">
+            <h1 class="text-center">Ingresa los Aut&oacutematas de Pila</h1>
+            <h1 class="divider1"></h1>
+            <div class="text-center">
+                <p><strong>Importante!</strong> <br><em class="far fa-check-circle"></em> Considera el <em><strong>@</strong></em><br> como car&aacutecter que representa vac&iacuteo</p>
+                <p><em class="far fa-check-circle"></em> El car&aacutecter <em><strong>Z</strong></em><br> representa el inicio de la pila</p>
+            </div>
+            
+            <div class="row pt-3 justify-content-center">
+                <div class="col-md-6 mx-5">
+                    <p><strong>1.</strong> El tipo de aut&oacutemata que ingresaras es:</p>
+                    <select class="form-control mb-3" id="tipoAutomata">
+                        <option id="2AP" value="AP">2 AP</option>
+                    </select>
+
+                    <p><strong>2.</strong> Ahora indica el N&deg de estados de los aut&oacutematas</p>
+                    
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" id="Automata1" placeholder="Ingrese N&deg de estados para el automata 1" required>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group" >
+                                    <input class="form-control" type="number" id="Automata2" placeholder="Ingrese N&deg de estados para el automata 2" required>     
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p><strong>3.</strong> Ahora indica el alfabeto de entrada, elige cuantas variables tendra este: <em><strong>Si quieres ingresar x, y, digita 2</strong> </em></p>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" id="nEntradas" placeholder="N&deg de variables del lenguaje para el automata 1" required>
+                                    <input class="form-control mt-1" type="number" id="nEntradas2" placeholder="N&deg de variables del lenguaje para el automata 2" required>
+                                </div> 
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <a onclick="addFormulario()" id="addFormulario()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Aceptar e Ingresar </a>
+                    </div>
+
+                    
+                    <h1 class="" style="width: 300px;" width="300px"></h1>
+                </div>
+
+                <div class="container">
+                
+                    <div class="row justify-content-center mx-5">
+                        <div id="mostrarmsj"></div>
+                        <div class="mx-4" id="formulario"></div>
+                        <div class="mx-4" id="formulario2"></div>
+                        <div class="mx-4" id="mostrarLenguaje"></div>
+                        <div class="mx-4" id="mostrarLenguaje2"></div>
+                    </div>
+                    <div class="mt-2 align-content-center" id="confirmar"></div>  
+                </div>
+                <div id="boxs" class="row mx-2">
+                    
+                    <div class="col-6 border-right pb-5">
+                        <h2 class="text-center mt-1">Tabla de Transici&oacuten Aut&oacutemata N&deg1</h2>
+                        <h1 class="divider mx-2 mb-1"></h1>
+                        <div class="pt-4" id="tablaTransicion1" ></div>
+                    </div>
+                    <div class="col-6 pb-5">
+                        <h2 class="text-center mt-1">Tabla de Transici&oacuten Aut&oacutemata N&deg2</h2>
+                        <h1 class="divider mx-2 mb-1"></h1>
+                        <div class="pt-4" id="tablaTransicion2"></div>
+                    </div>
+
+                    <a onclick="confirmarTRA()" class="btn btn-outline-light px-2 mb-3 mt-4" id="auto2" style="text-align: center; max-width: 850px;"> Confirmar Datos</a>
+                    
+                </div>
+    
+            </div>
+            
+            <div class="container" id="styless">
+                <div class="row" id="Quintupla">
+                    
+                    <div id="bordes"  class="col-md-6 border-right pt-3">
+                        <h3 class="text-center">Septupla Aut&oacutemata N&deg1</h3>
+                        <h1 class="divider"></h1>
+                        <div id="primeraQuintupla1"></div>
+                        <div id="primeraQuintupla2"></div>
+                        <div id="primeraQuintupla3"></div>
+                        <div id="primeraQuintupla4"></div>
+                        <div id="primeraQuintupla5"></div>
+                        <div id="primeraQuintupla6"></div>
+                        <div id="primeraQuintupla7"></div>
+                        <div id="primeraQuintupla8"></div>
+                        <div id="primeraQuintupla9"></div>    
+                    </div>
+                    <h1></h1>
+                    <div class="col-md-6 pt-3">
+                        <h3 class="text-center">Septupla Aut&oacutemata N&deg2</h3>
+                        <h1 class="divider"></h1>
+                        <div id="segundaQuintupla1"></div>
+                        <div id="segundaQuintupla2"></div>
+                        <div id="segundaQuintupla3"></div>
+                        <div id="segundaQuintupla4"></div>
+                        <div id="segundaQuintupla5"></div>
+                        <div id="segundaQuintupla6"></div>
+                        <div id="segundaQuintupla7"></div>
+                        <div id="segundaQuintupla8"></div>
+                        <div id="segundaQuintupla9"></div>    
+                    </div>
+                </div>
+            </div>
+           
+            <div class="row pb-5 justify-content-center">
+                <div class="col-7 mt-5 my-2">
+                    
+                    <h3 class="text-center mt-2">Uni&oacuten</h3>
+                    <h1 class="dividerGr"></h1>
+                    <a onclick="union()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                    <div id="rowUnion2" class="row">
+                        <div id="conjuntoUnion" class="ml-3"></div>
+                        <div id="entradaUnion" class="ml-3"></div>
+                        <div id="salidaUnion" class="ml-3"></div>
+                        <div id="lenguajeUnion" class="ml-3"></div>
+                        <div id="transicionUnion" class="ml-3"></div>
+                    </div>
+                </div>
+                <div class="col-7 mt-5 my-2">
+                    
+                    <h3 class="text-center mt-2">Concatenaci&oacuten</h3>
+                    <h1 class="dividerGr"></h1>
+                    <a onclick="concatenacion()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                    <div id="rowUnion2" class="row">
+                        
+                        <div id="conjuntoConca" class="ml-3"></div>
+                        <div id="entradaConca" class="ml-3"></div>
+                        <div id="salidaConca" class="ml-3"></div>
+                        <div id="lenguajeConca" class="ml-3"></div>
+                        <div id="transicionConca" class="ml-3"></div>
+                    </div>
+                </div>
+            </div>
+            
+
+    </div>
+
+
+
+</body>
+</html>
+
+
+<script src="javascript/funcion.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/c8152ea011.js" crossorigin="anonymous"></script>

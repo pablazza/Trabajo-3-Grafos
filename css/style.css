@@ -1,9 +1,9 @@
 :root{
-    --blanco: #ffffff;
-    --oscuro: #212121;
-    --primario: #757575;
-    --secundario: #2a3b86;
-    --fondo: #0a1858;
+    --white: #ffffff;
+    --dark: #212121;
+    --primary: #757575;
+    --warning: #2a3b86;
+    --danger: #0a1858;
 }
 html {
     scroll-behavior: smooth;
@@ -18,7 +18,7 @@ body {
 }
 
 .navbar {
-    background-color: black !important;
+    background-image: url(../img/codigo.jpg)
 }
 
 br {
@@ -187,7 +187,7 @@ span:hover {
 /* Seccion del footer*/
 
 .container-fluid {
-    background-color: black !important;
+    background-image: url(../img/bg.jpeg);
 }
 
 #footer h4 {
